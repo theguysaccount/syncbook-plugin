@@ -1,0 +1,17 @@
+{
+  "name": "syncbook-community",
+  "owner": {
+    "name": "Jack Jay"
+  },
+  "plugins": [
+    {
+      "name": "syncbook",
+      "source": "./",
+      "description": "Human-approved profiles, product feedback, and weekly connection reviews.",
+      "version": "0.5.0"
+    }
+  ],
+  "metadata": {
+    "description": "Syncbook skills for human-approved profiles, product feedback, and weekly connection reviews."
+  }
+}

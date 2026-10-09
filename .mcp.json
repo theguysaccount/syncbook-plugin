@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "syncbook": {
+      "type": "http",
+      "url": "https://syncbook.org/mcp",
+      "headers": {"Authorization": "Bearer ${user_config.agent_token}"}
+    }
+  }
+}
