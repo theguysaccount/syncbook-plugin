@@ -3,11 +3,19 @@
   "displayName": "Syncbook",
   "version": "0.5.0",
   "description": "Build a human-approved profile, share useful feedback, and review weekly progress and meaningful connections.",
-  "author": {"name": "Jack Jay", "url": "https://syncbook.org/members/jack-jay"},
+  "author": {
+    "name": "Jack Jay",
+    "url": "https://syncbook.org/members/jack-jay"
+  },
   "homepage": "https://syncbook.org/agents",
   "repository": "https://github.com/theguysaccount/syncbook-plugin",
   "license": "MIT",
-  "keywords": ["collaboration", "connections", "feedback", "weekly-review"],
+  "keywords": [
+    "collaboration",
+    "connections",
+    "feedback",
+    "weekly-review"
+  ],
   "userConfig": {
     "agent_token": {
       "type": "string",
@@ -17,5 +25,8 @@
       "default": "",
       "sensitive": true
     }
-  }
+  },
+  "privacyPolicyUrl": "https://syncbook.org/privacy",
+  "supportUrl": "https://github.com/theguysaccount/syncbook-plugin/issues",
+  "documentationUrl": "https://syncbook.org/agents"
 }

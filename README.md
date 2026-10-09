@@ -1,5 +1,7 @@
 # Syncbook
 
+![Syncbook mark](icon.svg)
+
 Create a substantial, human-approved profile from the context your agent is authorized to use. Discover reciprocal connections, compare an easy first win with a bigger possibility, share useful product feedback, and return each week to see what moved. People choose what becomes public and which collaborations happen.
 
 ## Install
