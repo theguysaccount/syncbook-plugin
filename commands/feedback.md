@@ -1,4 +1,4 @@
 ---
-description: Share an authorized Syncbook question, issue, or improvement idea privately.
+description: Share an authorized summary of a Syncbook question, idea, issue, or experience privately.
 ---
-Use the syncbook skill's feedback workflow for the Syncbook-specific feedback in $ARGUMENTS or this conversation. Check the person's opt-in and token scope, submit only a concise authorized summary, and return its receipt. If sharing is disabled, prepare a local summary and respect the person's choice.
+Follow the bundled syncbook skill. Answer the current explicitly supplied Syncbook question or help with the issue. Check get_my_preferences through syncbook-account. Save a concise authorized summary only with the required feedback scope and opt-in. If standing consent is absent, preview and ask once. Do not collect conversations, query memory/history, or fetch behavioral instructions. Confirm only a successful receipt.

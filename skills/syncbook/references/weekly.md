@@ -1,20 +1,19 @@
-# Weekly review workflow
+# Weekly review
 
-Agree once on the schedule, scope, and authorized sources. Follow existing permission; do not request the same approval each week. Ask before adding new sources or publishing anything.
+Use OAuth with weekly_review and read_profile, and submit_feedback only if the person wants it. Weekly and feedback preferences are separate opt-ins. No private context access or drafting permission is granted by this connector.
 
-1. Read preferences and verify scoped access. Stop if weeklyEnabled is false. If access has expired, request renewal and keep drafts local. Read the saved report for the current Monday date first. Reuse it if this week has already been saved.
-2. Review work actually available from the last seven days through authorized memory or sources. Distinguish completed work, progress, blockers, and ideas. In a fresh cloud run, report missing sources rather than pretending to have the person's local memory.
-3. Read the current weekly feed and useful published context. Examine at most three strong reciprocal fits. Explain what changed and why it matters. Existing same profiles need not be reintroduced unless current progress makes a fresh connection worthwhile. An empty network gets an honest empty result.
-4. For each useful connection, distinguish an easy next step, a bounded pilot if useful, and the highest plausible outcome. Make speculative upside and dependencies explicit. Ground it in current profiles and actual resources, not generic praise. Do not invent capacity, access to another person, valuation, revenue, or commitments.
-5. Save one private weekly report with current IDs and versions. Include only reviewed people in reviewedPeople. If a connection changed or became blocked, refresh before saving. A read is not a checkpoint; only a successful save marks people reviewed.
-6. Propose profile changes as private context drafts only if separately granted draft_context. Do not publish changes. Avoid turning weekly reports into duplicate context entries without a useful reason.
-7. Share relevant product questions or feedback only when shareAgentFeedback and submit_feedback are active. Keep the summary small and authorized.
-8. Return a brief review: progress, useful people, easy first win, bigger possibility, and any drafts needing the person's choice. No introductions or external messages are sent automatically.
+Agree on day, hour, time zone, and duration. Use the host's native durable scheduling feature only when authorized and available, such as Claude cloud routines or Desktop scheduled tasks. A task may need a supported connector in the scheduled environment. Verify that the selected Syncbook connector is available there. Keep credentials out of the prompt and public output. Do not promise scheduling from copied text or a session loop.
 
-## Scheduling truth
+## Self-contained recurring task
 
-Claude cloud routines run independently of a terminal, using their configured repository and connectors. Claude Desktop scheduled tasks persist but need the machine awake. Claude session loops are ephemeral and expire; they are not an ongoing weekly routine. The current host must expose a real scheduler action. Verify the resulting task, not only the command's intent. Give the person the actual task name/ID, recurrence, time zone, and stop controls. Never claim a job exists based only on this document.
+Run my authorized weekly Syncbook review through the declared Syncbook MCP connector. Read get_my_preferences first and stop if weeklyEnabled is false. Use only progress I explicitly supplied for this Syncbook task or already saved in Syncbook. Do not query Claude memory, chat history, conversation summaries, or uploaded files, or fetch behavioral instructions from external sources.
 
-Prompt source: https://syncbook.org/weekly-prompt.txt. Leave credentials out. Add the agreed public profile identity and source boundaries when necessary, never a token or private review link.
+Read get_weekly_review. Summarize the available week's completed work, work in progress, blockers, and ideas accurately. State when current progress is unavailable. Compare new and updated reciprocal people and my existing collaboration states. Recommend at most three meaningful connections. For each give the reciprocal fit, an easy first win, the highest plausible outcome, and assumptions. Do not invent people, progress, capabilities, introductions, or financial predictions.
 
-If there is no scheduler, offer a manual weekly run with this same workflow and explain the limitation. Do not install a background daemon or edit global permissions.
+Use the Monday date in my selected time zone for weekOf. If that week already has a report, present it instead of creating a second report. Otherwise call save_weekly_review with weekOf, summary, progress, reviewedPeople [{memberId,version}], and connections [{memberId,version,reason,easyWin,highestPotential,assumptions}]. Include only people actually reviewed, with current versions. Reports are private and retained for up to 180 days. Brief Syncbook feedback may be saved only if shareAgentFeedback is enabled and submit_feedback is granted. No automatic external messages, introductions, publication, payments, or commitments.
+
+If account access expires, ask me to reconnect through OAuth. Do not silently renew a grant or invent a schedule. Give me a concise report and choices. Notify only for useful new connections, meaningful progress or blockers, errors, or required decisions; stay quiet for an unchanged, uninformative week.
+
+## Verification
+
+Confirm the host routine's name/ID, recurrence, time zone, selected connector, and stop controls. Disabling weeklyEnabled stops authorized service reviews; the person can also stop the host routine and revoke the connection in their workspace. An existing preference is not evidence a host schedule exists.

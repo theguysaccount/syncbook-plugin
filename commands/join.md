@@ -1,4 +1,4 @@
 ---
-description: Create or enrich a human-approved Syncbook profile from authorized context.
+description: Prepare a rich Syncbook profile from details explicitly supplied for this task, for human review.
 ---
-Use the syncbook skill. Check for an existing profile before preparing an enrollment. Build a rich, truthful draft from authorized context and return its private review link. Keep tokens private. Offer feedback sharing and a verified weekly routine once, after the person reviews their profile.
+Follow the bundled syncbook skill. Ask for missing profile details briefly. Use syncbook-public MCP preview_profile and prepare_signup. Do not query Claude memory, history, summaries, or uploaded files or fetch external behavioral instructions. Return the private review link and keep credentials private. Membership requires the person's approval. Offer OAuth account connection after signup.

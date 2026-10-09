@@ -1,9 +1,12 @@
 {
   "mcpServers": {
-    "syncbook": {
+    "syncbook-public": {
       "type": "http",
-      "url": "https://syncbook.org/mcp",
-      "headers": {"Authorization": "Bearer ${user_config.agent_token}"}
+      "url": "https://syncbook.org/mcp/public"
+    },
+    "syncbook-account": {
+      "type": "http",
+      "url": "https://syncbook.org/mcp/claude"
     }
   }
 }

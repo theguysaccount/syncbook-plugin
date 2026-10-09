@@ -16,16 +16,6 @@
     "feedback",
     "weekly-review"
   ],
-  "userConfig": {
-    "agent_token": {
-      "type": "string",
-      "title": "Private Syncbook agent token (optional)",
-      "description": "Leave empty for discovery and signup. For private reviews, paste a scoped token you create in your Syncbook workspace. Never use a recovery key.",
-      "required": false,
-      "default": "",
-      "sensitive": true
-    }
-  },
   "privacyPolicyUrl": "https://syncbook.org/privacy",
   "supportUrl": "https://github.com/theguysaccount/syncbook-plugin/issues",
   "documentationUrl": "https://syncbook.org/agents"
