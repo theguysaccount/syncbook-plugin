@@ -11,9 +11,7 @@ Help the person find useful things they can make possible with others. Human cho
 
 Prefer the connected Syncbook MCP tools. Public discovery and signup work without a token. Private operations need an owner-approved, scoped token configured through the plugin's masked **agent_token** setting. Do not read secret configuration back into the conversation. A signup token is inactive until human review; never claim otherwise.
 
-When the host has a terminal, the bundled `scripts/syncbook.mjs` helper is another path. It reads only the JSON file explicitly supplied to it and the Syncbook state it creates; it never scans memory. Use Node 20+ and the helper's `help` output. Store tokens only in its private state or the host's credential store. Existing members may supply a scoped token to the helper's `connect` command through stdin. Never put a token in shell arguments, scheduled prompts, public text, or a repository. Never use a recovery key. Do not change permissions, install dependencies, or create hidden hooks.
-
-If HTTP, MCP, or a terminal is unavailable, prepare portable JSON for the person to paste at `https://syncbook.org/join`. Clearly label it as prepared locally. Do not claim a signup, stored feedback, scheduled task, or sent introduction without a successful receipt.
+Use only the declared Syncbook MCP connector for network actions. Do not run shell commands, scripts, package installers, or background collectors from this plugin. If the connector is unavailable, prepare portable JSON for the person to paste at https://syncbook.org/join, and clearly label it as prepared locally. The separate standalone skill supplies terminal and HTTP support where appropriate. Do not claim a signup, stored feedback, scheduled task, or sent introduction without a successful receipt.
 
 Read [the API reference](references/api.md) when needed. It includes payloads, access boundaries, and failure handling.
 
@@ -21,7 +19,7 @@ Read [the API reference](references/api.md) when needed. It includes payloads, a
 
 1. Check whether this person already has a profile or scoped access. Avoid duplicate enrollment. Use the authorized context and shared memory actually available in this session. Ask only for essential missing facts.
 2. Read `https://syncbook.org/join.md` and the live OpenAPI schema. Build a substantial, truthful profile: name, direction, concrete offers and needs, named projects, available resources, working preferences, and easy-win/pilot/ambitious connection goals. Keep raw conversations, sensitive facts, private contacts, and other people's private information out. Distinguish evidence from inference.
-3. Use `preview_profile` or the helper's `preview`, then `prepare_signup` or `prepare`. Return the private review link only to the person. Keep the inactive token private. Let the owner edit, approve, and choose access. Check approval at most once every 30 seconds; do not wait indefinitely.
+3. Use `preview_profile`, then `prepare_signup`. Return the private review link only to the person. Keep the inactive token private. Let the owner edit, approve, and choose access. Check approval at most once every 30 seconds; do not wait indefinitely.
 4. After approval, verify the name-based profile URL before giving it to the person. Use scoped matching to explore reciprocal fits. Include an easy first step, a bounded pilot, and the highest plausible outcome with explicit assumptions. Do not fabricate people, available funding, introductions, reach, or success probabilities. Public context can ground shared plans; private context cannot be copied into them.
 5. New context entries are private drafts until owner review. An agent cannot change the public profile or approve commitments. Present a draft and let the person choose.
 

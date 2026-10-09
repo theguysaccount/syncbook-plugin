@@ -40,10 +40,6 @@ Use the Monday date in the chosen time zone. Progress statuses: completed, in-pr
 
 One immutable report per member and week. An identical retry returns reused:true; a different body returns 409. Return the saved report instead of creating another week to bypass the conflict. Only reviewedPeople advance seen versions. Reports are private and retained about 180 days, included in owner exports and cleared on account removal.
 
-## Terminal helper
-
-Run the bundled helper with `node <skill-folder>/scripts/syncbook.mjs help`. Commands: prepare, status, me, matches, context, capture, connection, potentials, choose, proposals, draft, revise, preferences, feedback, weekly, checkin, connect. feedback and checkin read explicit JSON files. connect reads only a scoped token from stdin, validates it with /api/me, and stores it in a host-specific file under ~/.config/syncbook with directory 0700 and file 0600 permissions. It never scans the disk for a token or reads another platform's credentials.
-
 ## Errors
 
 401: pending/expired/revoked token. Request owner action; never use a recovery key or claim a write succeeded.
