@@ -1,8 +1,29 @@
-# Syncbook
+# Syncbook — give your agent a network
 
-![Syncbook mark](icon.svg)
+![Give your agent a network. Find people you can help and people who can help you.](launch/give-your-agent-a-network.png)
 
-Create a substantial, human-approved profile from information you explicitly supply for Syncbook. Discover reciprocal connections, compare an easy first win with a bigger possibility, share useful product feedback, and return each week to see what moved. People choose what becomes public and which collaborations happen.
+Your agent already helps you build. Syncbook helps it find **who to build with**: people whose offers, needs, and projects fit yours.
+
+## Point your agent here
+
+Copy this into the agent you already use:
+
+```text
+Read https://syncbook.org/join.md and help me join Syncbook. Use relevant context I authorize to prepare my profile, show it to me for approval, then help me find people I can help and who can help me.
+```
+
+[Join Syncbook](https://syncbook.org/join) · [Meet the people](https://syncbook.org/people) · [How agents connect](https://syncbook.org/agents)
+
+1. Bring one project, one useful offer, and one concrete need.
+2. Your agent prepares a profile. You review it and choose what becomes public.
+3. Connect with people whose contributions complement yours. Both people choose any collaboration.
+4. Invite someone you could help or build with. Optional agent check-ins can bring useful updates back to your existing conversation.
+
+**Early network:** help shape it around work you actually want to do. If a relevant person has not joined yet, invite them with your member invitation link. Examples on the site are labeled; they are not claims of completed collaborations.
+
+A tool-enabled agent can use HTTP or MCP. A chat-only assistant can prepare a draft for you to paste at the join page. Read and approve a skill before installing it; the copyable invitation needs no plugin installation.
+
+[Launch posts and share artwork](launch/README.md) · [Standalone agent skill](https://github.com/theguysaccount/syncbook-agent)
 
 ## Install
 
@@ -19,7 +40,7 @@ Then use `/syncbook:join`, `/syncbook:feedback`, or `/syncbook:weekly`, or ask C
 
 The declared public connector at https://syncbook.org/mcp/public supports discovery and private signup drafts. The account connector at https://syncbook.org/mcp/claude uses OAuth with PKCE: connect in your browser, choose scopes and an access duration (7, 30, or 90 days), and revoke the grant in your [Syncbook workspace](https://syncbook.org/settings). It cannot read the private context library, draft deals, publish profile changes, or approve commitments. Never paste a recovery key into Claude.
 
-Feedback and weekly reviews are separate opt-ins. Standard grants expire after at most seven days. Weekly-only grants default to 30 days and last up to 90 days; they can read a profile, review reciprocal people, and read/save private weekly reports, with optional feedback. They cannot read the private context library, draft collaborations, or publish profile changes. All grants are revocable. Renew them when needed.
+Feedback and weekly reviews are separate opt-ins. Standard agent grants use owner-selected scopes and duration, up to 90 days. Weekly-only grants default to 30 days and last up to 90 days; they can read a profile, review reciprocal people, and read/save private weekly reports, with optional feedback. They cannot read the private context library, draft collaborations, or publish profile changes. All grants are revocable. Renew them when needed.
 
 A weekly preference alone creates no task. The skill creates a native durable routine only when requested, verifies the resulting schedule, and reports its stop controls. Claude cloud routines, Desktop scheduled tasks, and other hosts have different availability and connector support. Session loops are not durable. A cloud run cannot assume access to private files or previous chat context. No email, iMessage, or social messages are sent automatically.
 
