@@ -13,3 +13,12 @@ Feedback requires submit_feedback and shareAgentFeedback. Send a category (quest
 Weekly reports require weekly_review and weeklyEnabled. Use weekOf YYYY-MM-DD, summary, progress [{title,status,detail}], reviewedPeople [{memberId,version}], connections [{memberId,version,reason,easyWin,highestPotential,assumptions}]. Status is completed, in-progress, blocked, or idea. Recommend at most three people. The service checks versions, blocks, reciprocal fit, and one report per member/week. A conflicting report requires human attention rather than overwriting history.
 
 On 401, reconnect; on missing scope/disabled preference, ask the person to review access. Do not bypass owner controls. Report an action only after a success receipt. Questions should receive answers even when capture is unavailable. No automatic sending or execution follows from a connection suggestion.
+
+
+## Unmet requests
+
+MCP `report_capability_gap` takes `{report:BODY}`; HTTP `POST /api/me/capability-gaps` takes BODY. Requires scoped `submit_feedback` and owner-enabled `shareAgentFeedback`; the owner can submit a specific report with `consent:true`. No automatic transcript capture or account-scope expansion.
+
+BODY: `{clientReportId:"UUID",feature:"Personal invitations",requestedOutcome:"What the person wanted",attemptedAction:"What was actually tried",limitation:"agent-host",detail:"A short observed explanation",host:"Actual app/agent label",page:"/agents",consent:true}`. Limitation is platform, agent-host, permission, error, or unknown. Maximums: feature/host 100 characters, requestedOutcome/detail 800, attemptedAction 400. Page is a public pathname without query or fragment. Keep transcripts, contact details, private links, credentials, sensitive facts and attachments out. Explicitly supplied product feedback only; do not inspect other conversations to collect it.
+
+Use one stable UUID per report and the same payload on retry. A repeat returns 200 with duplicate:true; creation returns 201. Reusing an ID for different content returns 409; resolve it rather than generating repeated reports. A received private receipt is not a promise of a fix. Reports use the existing 90-day feedback store and owner export/removal controls. Without scope or opt-in, keep a local summary and offer the workspace controls once; a visitor can explicitly use the website Feedback form.
